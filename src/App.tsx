@@ -29,7 +29,7 @@ function App() {
     <>
       <Header toggleDarkMode={toggleDarkMode} isDarkMode={isDarkMode} />
       {/* BODY STARTS FROM HERE */}
-      <div className='p-7 dark:bg-custom-gray'>
+      <div className='p-7 dark:bg-light-gray'>
         <NewsList />
       </div>
       {/* BODY ENDS HERE */}

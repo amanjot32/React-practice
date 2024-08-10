@@ -13,6 +13,7 @@ export default {
         transparent: 'transparent',
       current: 'currentColor',
         'custom-gray': '#262626',
+        'light-gray': '#2d2d2d',
         'purple': '#a17ae4',
       },
       fontFamily: {

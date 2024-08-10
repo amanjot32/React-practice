@@ -1,4 +1,3 @@
-// src/components/NewsList.tsx
 import React, { useEffect, useState } from 'react';
 import { getArticles } from '../../core/services/newsServices';
 import { Article } from '../../core/models/article';
@@ -24,22 +23,28 @@ const NewsList: React.FC = () => {
     fetchTopHeadlines();
   }, []);
 
- 
-
   if (loading) {
     return <div className="flex justify-center items-center h-screen text-purple font-bold">Loading...</div>;
   }
 
   return (
+    <div className="container mx-auto px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {articles.map((article, index) => (
-            <div key={index}>
-                <NewsTile title={article.title} desc={truncateText(article.description, 17)} url={article.url} imgUrl={article.urlToImage || ''} authorName={article.author || ''} date={article.publishedAt} />
-            </div> 
-        )
-        )}
-      </div>  
-);
+          <div key={index}>
+            <NewsTile
+              title={article.title}
+              desc={truncateText(article.description, 17)}
+              url={article.url}
+              imgUrl={article.urlToImage || ''}
+              authorName={article.author || ''}
+              date={article.publishedAt}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default NewsList;
