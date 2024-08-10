@@ -4,24 +4,35 @@ import TextComponent from './text_styles';
 interface NewsTileProps{
     title: string;
     desc: string;
+    url: string;
     imgUrl: string;
     authorName: string;
     date: string;
 }
 
-const NewsTile: React.FC<NewsTileProps> = ({title, desc, imgUrl, authorName, date}) => {
+const handleClick = (url: string) => {
+    window.open(url, '_blank');
+  };
+
+const NewsTile: React.FC<NewsTileProps> = ({title, desc, url, imgUrl, authorName, date}) => {
     return(
-        <div className='w-[350px] dark:bg-custom-gray dark:text-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out'>
-            <img src='https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2020/07/Tesla-model-3-vent.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1'
+        <button onClick={() => handleClick(url)}>
+            <div className='w-[300px] h-[400px] dark:bg-custom-gray dark:text-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 ease-in-out'>
+            <img src={imgUrl == '' ? 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty-300x240.jpg' : imgUrl}
             loading='lazy'
-            className='rounded-t-lg'
-            />
+            className='rounded-t-lg w-full'
+            />                
             <div className='rounded-b-xl p-4'>
                 <TextComponent text={title} size='sm' weight='bold'/>
                 <div className='p-1'></div>
                 <TextComponent text={desc} size='xs' />
+                <div className='p-2'></div>
+                <TextComponent text={authorName == 'n/a' ? '' : authorName} size='xs' weight='bold'/>
+                <div className='p-2'></div>
+                <TextComponent text={date} size='xs' weight='bold'/>
             </div>
-        </div>
+            </div>
+        </button>
     )
 }
 

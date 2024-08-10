@@ -9,7 +9,7 @@ function Footer(){
                 <TextComponent text="News App" size="3xl" weight="bold"/>
                 <div className="flex justify-between text-purple">
                     <TextComponent text="Built with" size="base"/>
-                    <a href="https://newsapi.org/" ><p className="text-purple underline ml-1">News API</p></a>
+                    <a href="https://newsapi.org/" target="_blank"><p className="text-purple underline ml-1">News API</p></a>
                 </div>
             </div>
         </footer>
