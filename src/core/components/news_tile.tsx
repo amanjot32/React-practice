@@ -1,5 +1,6 @@
 import React from 'react';
 import TextComponent from './text_styles';
+import PlaceholderImg from '../../assets/images/empty.jpg'
 
 interface NewsTileProps {
   title: string;
@@ -18,7 +19,7 @@ const NewsTile: React.FC<NewsTileProps> = ({ title, desc, url, imgUrl, authorNam
   return (
     <div className="w-full h-auto dark:bg-custom-gray dark:text-white rounded-xl shadow-md hover:shadow-xl transition duration-300 ease-in-out cursor-pointer" onClick={() => handleClick(url)}>
       <img
-        src={imgUrl === '' ? 'https://www.generationsforpeace.org/wp-content/uploads/2018/03/empty-300x240.jpg' : imgUrl}
+        src={imgUrl === '' ? PlaceholderImg : imgUrl}
         loading="lazy"
         className="rounded-t-lg w-full h-48 object-cover"
       />

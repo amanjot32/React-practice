@@ -23,5 +23,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "d:/Dev/React-practice/@/components/ui/pagination.tsx", "d:/Dev/React-practice/@/components/ui/button.tsx", "d:/Dev/React-practice/@/lib/utils.ts"]
 }
